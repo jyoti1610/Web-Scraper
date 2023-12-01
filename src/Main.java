@@ -18,15 +18,18 @@ public class Main {
             Elements diseaseElements = document.select(".style__inner-container___3BZU9 style__product-grid___3noQW style__padding-top-bottom-12px___1-DPF");
 
             for (Element diseaseElement : diseaseElements) {
-                // Extract disease name
+                // Extract details
                 String diseaseName = diseaseElement.select(".style__card-image___1oz_4").text();
+                String overview = diseaseElement.select(".DiseaseList__overview").text();
+                String keyfact = diseaseElement.select(".DiseaseList__keyfact").text();
+                String symptoms = diseaseElement.select(".DiseaseList__symptoms").text();
+                String causes = diseaseElement.select(".DiseaseList__causes").text();
 
-                // Extract disease details
-                String diseaseDetails = diseaseElement.select(".DiseaseList__description").text();
-
-                // Print the extracted data
                 System.out.println("Disease Name: " + diseaseName);
-                System.out.println("Disease Details: " + diseaseDetails);
+                System.out.println("overview: " + overview);
+                System.out.println("keyfact: " + keyfact);
+                System.out.println("symptoms: " + symptoms);
+                System.out.println("causes: " + causes);
                 System.out.println("----------");
             }
         } catch (IOException e) {
